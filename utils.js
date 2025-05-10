@@ -3,14 +3,14 @@ function createPopup(restaurant) {
     <div class="modal-dialog modal-dialog-scrollable">
         <b>${restaurant.Name}</b><br>
         <b>Type:</b> ${restaurant.Type}<br>
-        <b>Patio:</b> ${restaurant.Patio ? "Yes" : "No"}<br>
-        <b>Noise:</b> ${restaurant.Noise}<br>
-        <b>Chaos:</b> ${restaurant.Chaos}<br>
-        <b>Atmosphere:</b> ${restaurant.Atmosphere}<br>
-        <b>Service:</b> ${restaurant.Service}<br>
-        <b>Food:</b> ${restaurant.Food}<br>
-        <b>Price:</b> ${restaurant.Price}<br>
-        <b>Value:</b> ${restaurant.Value}<br>
+        <b>Patio:</b> ${restaurant.Patio ? "✅" : "❌"}<br>
+        <b>Noise:</b> ${"👂".repeat(restaurant.Noise)}<br>
+        <b>Chaos:</b> ${"💥".repeat(restaurant.Chaos)}<br>
+        <b>Atmosphere:</b> ${"⭐️".repeat(restaurant.Atmosphere)}<br>
+        <b>Service:</b> ${"⭐️".repeat(restaurant.Service)}<br>
+        <b>Food:</b> ${"⭐️".repeat(restaurant.Food)}<br>
+        <b>Value:</b> ${"⭐️".repeat(restaurant.Value)}<br>
+        <b>Price:</b> ${"💰".repeat(restaurant.Price)}<br>
         <a href="${restaurant.Site}" target="_blank">Website</a><br>
         <a href="${restaurant.Instagram}" target="_blank">Instagram</a><br>
         <a href="${restaurant.Yelp}" target="_blank">Yelp</a><br>
