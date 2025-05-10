@@ -50,7 +50,7 @@
         "Site": "https://blossomrestaurant.com/",
         "Instagram": "https://www.instagram.com/blossomrestaurant/",
         "Yelp": "https://www.yelp.com/biz/blossom-vietnamese-restaurant-los-angeles-2",
-        "Addresses": "426 S Main St, Los Angeles, CA 90013",
+        "Addresses": "2821 Ocean Park Blvd, Santa Monica, CA 90405",
         "Comments": "Nicest atmosphere I've seen at a place that serves pho, pho was ok.",
         "lat": 34.0473888,
         "lng": -118.2477548
@@ -88,7 +88,7 @@
         "Site": "https://www.boasteak.com/",
         "Instagram": "https://www.instagram.com/boasteakhouse/",
         "Yelp": "https://www.yelp.com/biz/boa-steakhouse-west-hollywood",
-        "Addresses": "9200 Sunset Blvd, West Hollywood, CA 90069",
+        "Addresses": "101 Santa Monica Blvd, Santa Monica, CA 90401",
         "Comments": "Steakhouses are a scam in general but this one stands out as one of the worst (primarily due to price). People watching here is funny, go for drinks.",
         "lat": 34.0897306,
         "lng": -118.392957
@@ -624,5 +624,43 @@
         "Comments": "Great burger, no complaints, super cheap.",
         "lat": 33.9977671,
         "lng": -118.4748076
+    },
+    {
+        "Name": "Sapp Coffee",
+        "Type": "Thai",
+        "Patio": false,
+        "Noise": 3,
+        "Chaos": 3,
+        "Atmosphere": 2,
+        "Service": 3,
+        "Food": 4,
+        "Price": 2,
+        "Value": 3,
+        "Site": "https://www.sappcoffeeshop.com",
+        "Instagram": "https://www.instagram.com/sapp_coffeeshop/",
+        "Yelp": "https://www.yelp.com/biz/sapp-coffee-shop-los-angeles-5",
+        "Addresses": "5183 Hollywood Blvd, Los Angeles, CA 90027",
+        "Comments": "Everything was pretty good except the fried rice which was pretty bad.",
+        "lat": null,
+        "lng": null
+    },
+    {
+        "Name": "Library Alehouse",
+        "Type": "BarNewAmerican",
+        "Patio": true,
+        "Noise": 2,
+        "Chaos": 3,
+        "Atmosphere": 4,
+        "Service": 4,
+        "Food": 4,
+        "Price": 3,
+        "Value": 3,
+        "Site": "https://www.libraryalehouse.com",
+        "Instagram": "https://www.instagram.com/libraryalehouse/?hl=en",
+        "Yelp": "https://www.yelp.com/biz/the-library-alehouse-santa-monica-2",
+        "Addresses": "2911 Main St, Santa Monica, CA 90405",
+        "Comments": "I love this place. It's really relaxing and pleasant; the interior/patio are cool and the food is great-- I suppose my only complaint is that they close at 11. I would say that it's my favorite bar/restaurant in Ocean Park.",
+        "lat": null,
+        "lng": null
     }
 ]
