@@ -1,5 +1,6 @@
 function createPopup(restaurant) {
     return `
+    <div class="modal-dialog modal-dialog-scrollable">
         <b>${restaurant.Name}</b><br>
         <b>Type:</b> ${restaurant.Type}<br>
         <b>Patio:</b> ${restaurant.Patio ? "Yes" : "No"}<br>
@@ -15,5 +16,6 @@ function createPopup(restaurant) {
         <a href="${restaurant.Yelp}" target="_blank">Yelp</a><br>
         <b>Address:</b> ${restaurant.Addresses}<br>
         <b>Comments:</b> ${restaurant.Comments}
+        </div>
     `;
 }

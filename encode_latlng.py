@@ -2,7 +2,6 @@ import typing as tp
 import json
 import argparse
 
-import sys
 import time
 import requests
 from loguru import logger
