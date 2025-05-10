@@ -1,20 +1,64 @@
+function scoreToEmoji(score, emoji) {
+    if (score === 0) {
+        return "🚫";
+    }
+    return emoji.repeat(score);
+}
+
 function createPopup(restaurant) {
     return `
     <div class="modal-dialog modal-dialog-scrollable">
-        <b>${restaurant.Name}</b><br>
-        <b>Type:</b> ${restaurant.Type}<br>
-        <b>Patio:</b> ${restaurant.Patio ? "✅" : "❌"}<br>
-        <b>Noise:</b> ${"👂".repeat(restaurant.Noise)}<br>
-        <b>Chaos:</b> ${"💥".repeat(restaurant.Chaos)}<br>
-        <b>Atmosphere:</b> ${"⭐️".repeat(restaurant.Atmosphere)}<br>
-        <b>Service:</b> ${"⭐️".repeat(restaurant.Service)}<br>
-        <b>Food:</b> ${"⭐️".repeat(restaurant.Food)}<br>
-        <b>Value:</b> ${"⭐️".repeat(restaurant.Value)}<br>
-        <b>Price:</b> ${"💰".repeat(restaurant.Price)}<br>
-        <a href="${restaurant.Site}" target="_blank">Website</a><br>
-        <a href="${restaurant.Instagram}" target="_blank">Instagram</a><br>
-        <a href="${restaurant.Yelp}" target="_blank">Yelp</a><br>
-        <b>Address:</b> ${restaurant.Addresses}<br>
+        <h2>${restaurant.Name}</h2><br>
+        <table>
+            <tr>
+                <td><b>Patio:</b></td>
+                <td>${restaurant.Patio ? "✅" : "❌"}</td>
+            </tr>
+            <tr>
+                <td><b>Noise:</b></td>
+                <td>${scoreToEmoji(restaurant.Noise, "👂")}</td>
+            </tr>
+            <tr>
+                <td><b>Chaos:</b></td>
+                <td>${scoreToEmoji(restaurant.Chaos, "💥")}</td>
+            </tr>
+            <tr>
+                <td><b>Atmosphere:</b></td>
+                <td>${scoreToEmoji(restaurant.Atmosphere, "⭐️")}</td>
+            </tr>
+            <tr>
+                <td><b>Service:</b></td>
+                <td>${scoreToEmoji(restaurant.Service, "⭐️")}</td>
+            </tr>
+            <tr>
+                <td><b>Food:</b></td>
+                <td>${scoreToEmoji(restaurant.Food, "⭐️")}</td>
+            </tr>
+            <tr>
+                <td><b>Value:</b></td>
+                <td>${scoreToEmoji(restaurant.Value, "⭐️")}</td>
+            </tr>
+            <tr>
+                <td><b>Price:</b></td>
+                <td>${scoreToEmoji(restaurant.Price, "💰")}</td>
+            </tr>
+            <tr>
+                <td><b>Website:</b></td>
+                <td><a href="${restaurant.Site}" target="_blank">${restaurant.Site}</a></td>
+            </tr>
+            <tr>
+                <td><b>Instagram:</b></td>
+                <td><a href="${restaurant.Instagram}" target="_blank">${restaurant.Instagram}</a></td>
+            </tr>
+            <tr>
+                <td><b>Yelp:</b></td>
+                <td><a href="${restaurant.Yelp}" target="_blank">${restaurant.Yelp}</a></td>
+            </tr>
+            <tr>
+                <td><b>Address:</b></td>
+                <td>${restaurant.Addresses}</td>
+            </tr>
+        </table>
         <b>Comments:</b> ${restaurant.Comments}
         </div>
     `;
