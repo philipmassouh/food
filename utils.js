@@ -43,16 +43,8 @@ function createPopup(restaurant) {
                 <td>${scoreToEmoji(restaurant.Price, "💰")}</td>
             </tr>
             <tr>
-                <td><b>Website:</b></td>
-                <td><a href="${restaurant.Site}" target="_blank">${restaurant.Site}</a></td>
-            </tr>
-            <tr>
-                <td><b>Instagram:</b></td>
-                <td><a href="${restaurant.Instagram}" target="_blank">${restaurant.Instagram}</a></td>
-            </tr>
-            <tr>
-                <td><b>Yelp:</b></td>
-                <td><a href="${restaurant.Yelp}" target="_blank">${restaurant.Yelp}</a></td>
+                <td><b>Links:</b></td>
+                <td><a href="${restaurant.Site}" target="_blank">Website</a> <a href="${restaurant.Instagram}" target="_blank">Instagram</a> <a href="${restaurant.Yelp}" target="_blank">Yelp</a></td>
             </tr>
             <tr>
                 <td><b>Address:</b></td>
