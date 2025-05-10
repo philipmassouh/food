@@ -1,3 +1,9 @@
+function addressToLink(address) {
+    const query = encodeURIComponent(address);
+    link = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    return link;
+}
+
 function scoreToEmoji(score, emoji) {
     if (score === 0) {
         return "🚫";
@@ -9,6 +15,11 @@ function createPopup(restaurant) {
     return `
     <div class="modal-dialog modal-dialog-scrollable">
         <h2>${restaurant.Name}</h2><br>
+        <a href="${addressToLink(restaurant.Addresses)}" target="_blank">${restaurant.Addresses}</a>
+
+        <a href="${restaurant.Site}" target="_blank">Website</a>
+        <a href="${restaurant.Instagram}" target="_blank">Instagram</a>
+        <a href="${restaurant.Yelp}" target="_blank">Yelp</a>
         <table>
             <tr>
                 <td><b>Patio:</b></td>
@@ -41,14 +52,6 @@ function createPopup(restaurant) {
             <tr>
                 <td><b>Price:</b></td>
                 <td>${scoreToEmoji(restaurant.Price, "💰")}</td>
-            </tr>
-            <tr>
-                <td><b>Links:</b></td>
-                <td><a href="${restaurant.Site}" target="_blank">Website</a> <a href="${restaurant.Instagram}" target="_blank">Instagram</a> <a href="${restaurant.Yelp}" target="_blank">Yelp</a></td>
-            </tr>
-            <tr>
-                <td><b>Address:</b></td>
-                <td>${restaurant.Addresses}</td>
             </tr>
         </table>
         <b>Comments:</b> ${restaurant.Comments}
