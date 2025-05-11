@@ -14,7 +14,7 @@ HEADERS = {"User-Agent": "food/1.0 (philipmassouh@gmail.com)"}
 
 
 
-def geocode_address(address: str) -> tuple[float, float]:
+def geocode_address(address: str) -> tuple[float, float] | tuple[None, None]:
     params = {
         "q": address,
         "format": "json",
@@ -30,7 +30,7 @@ def geocode_address(address: str) -> tuple[float, float]:
         return lat, lon
 
     logger.warning(f"Failed to geocode address: {address}")
-    return float('nan'), float('nan')
+    return None, None
 
 def _add_latlng_to_record(record: dict) -> dict:
     if record["Addresses"] is not None:

@@ -13,9 +13,10 @@
         "Site": "https://www.opentable.com/r/apl-restaurant-los-angeles",
         "Instagram": "https://www.instagram.com/adamperrylang/",
         "Yelp": "https://www.yelp.com/biz/apl-restaurant-los-angeles",
-        "Addresses": null,
+        "Addresses": "822 Washington Blvd, Marina Del Rey, CA 90292",
         "Comments": "This is an expensive BBQ popup with a long wait (1-2hrs) and changing locations-- that being said, it was amazing. I've been 4 times and it was a 10/10 every time.",
-        "Lng": null
+        "lat": 33.9880768,
+        "lng": -118.4518361
     },
     {
         "Name": "Augie's On Main",
@@ -208,25 +209,6 @@
         "lng": -118.3813639
     },
     {
-        "Name": "Dolcenero",
-        "Type": "Gelato",
-        "Patio": true,
-        "Noise": 0,
-        "Chaos": 2,
-        "Atmosphere": 5,
-        "Service": 2,
-        "Food": 3,
-        "Price": 3,
-        "Value": 2,
-        "Site": "https://www.losangelesdine.com/815557441795213/Dolcenero-Gelato",
-        "Instagram": "https://www.instagram.com/dolcenerogelato/",
-        "Yelp": "https://www.yelp.com/biz/dolcenero-santa-monica",
-        "Addresses": "2400 Main St Ste A3, Santa Monica, CA 90405",
-        "Comments": "Not worth a special trip but if you're in the area, it's a nice place to get gelato.",
-        "lat": null,
-        "lng": null
-    },
-    {
         "Name": "Heavy Handed",
         "Type": "Burger",
         "Patio": true,
@@ -278,7 +260,7 @@
         "Site": "https://jinya-ramenbar.com/",
         "Instagram": "https://www.instagram.com/jinyaramenbar/",
         "Yelp": "https://www.yelp.com/biz/jinya-ramen-bar-los-angeles",
-        "Addresses": "700 Wilshire Blvd, Suite B, Los Angeles, CA 90017",
+        "Addresses": null,
         "Comments": "This is a chain, has a nice patio, the food is slightly below average",
         "lat": null,
         "lng": null
@@ -373,7 +355,7 @@
         "Site": "https://mayurala.com/",
         "Instagram": "https://www.instagram.com/mayurarestaurant/",
         "Yelp": "https://www.yelp.com/biz/mayura-indian-restaurant-culver-city",
-        "Addresses": "10406 Venice Blvd, Culver City, CA 90232",
+        "Addresses": "10406 Venice Blvd., Culver City, CA 90232",
         "Comments": "Very good lamb saag. naan was stale",
         "lat": null,
         "lng": null
@@ -449,10 +431,10 @@
         "Site": "https://www.shoopsdeli.com/",
         "Instagram": "https://www.instagram.com/shoopsdeli/",
         "Yelp": "https://www.yelp.com/biz/shoops-delicatessen-santa-monica",
-        "Addresses": "2400 Main St #A1, Santa Monica, CA 90405",
+        "Addresses": "2400 Main St, Santa Monica, CA 90405",
         "Comments": "Friendly staff serving large portions of excellent deli/breakfast food. Known for their hot smoked salmon; also has plenty of healthy options. Although I just said it was excellent, it's typically a little low on the salt/mayo so you might want extra. Also, it also has German/Dutch/Scandanavian market + alcohol store.",
-        "lat": null,
-        "lng": null
+        "lat": 34.0038525,
+        "lng": -118.48568
     },
     {
         "Name": "Tar and Roses",
