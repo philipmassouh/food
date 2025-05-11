@@ -23,7 +23,7 @@ function createPopup(restaurant) {
           <button type="button" class="btn"><a href="${restaurant.Yelp}" target="_blank"><i class="fa-brands fa-yelp"></i></a></button>
         </div>
 
-        <table class="table table-sm">
+        <table id="modal-table" class="table table-sm">
             <tr>
                 <td><b>Patio:</b></td>
                 <td>${restaurant.Patio ? "✅" : "❌"}</td>
