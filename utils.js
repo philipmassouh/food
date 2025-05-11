@@ -13,14 +13,17 @@ function scoreToEmoji(score, emoji) {
 
 function createPopup(restaurant) {
     return `
-    <div class="modal-dialog modal-dialog-scrollable">
-        <h2>${restaurant.Name}</h2><br>
-        <a href="${addressToLink(restaurant.Addresses)}" target="_blank">${restaurant.Addresses}</a>
+    <div>
+        <h1 class="display-4">${restaurant.Name}</h1>
 
-        <a href="${restaurant.Site}" target="_blank">Website</a>
-        <a href="${restaurant.Instagram}" target="_blank">Instagram</a>
-        <a href="${restaurant.Yelp}" target="_blank">Yelp</a>
-        <table>
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+          <button type="button" class="btn"><a href="${addressToLink(restaurant.Addresses)}" target="_blank"><i class="fa-solid fa-map"></i></i></a></button>
+          <button type="button" class="btn"><a href="${restaurant.Site}" target="_blank"><i class="fa-solid fa-link"></i></a></button>
+          <button type="button" class="btn"><a href="${restaurant.Instagram}" target="_blank"><i class="fa-brands fa-instagram"></i></a></button>
+          <button type="button" class="btn"><a href="${restaurant.Yelp}" target="_blank"><i class="fa-brands fa-yelp"></i></a></button>
+        </div>
+
+        <table class="table table-sm">
             <tr>
                 <td><b>Patio:</b></td>
                 <td>${restaurant.Patio ? "✅" : "❌"}</td>
@@ -54,7 +57,11 @@ function createPopup(restaurant) {
                 <td>${scoreToEmoji(restaurant.Price, "💰")}</td>
             </tr>
         </table>
-        <b>Comments:</b> ${restaurant.Comments}
+
+        <blockquote class="blockquote">
+          <p class="mb-0">${restaurant.Comments}</p>
+        </blockquote>
+
         </div>
     `;
 }
