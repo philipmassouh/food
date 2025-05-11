@@ -24,19 +24,11 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
+    opacity: 0.9;
     padding: 20px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1050;
-    width: 300px;
+    width: 35vw;
     border-radius: 8px;
-    pointer-events: auto;
-}
-
-#modal-content {
-    max-width: 300px;
-    overflow-wrap: break-word;
-    margin-bottom: 20px;
 }
 
 button {

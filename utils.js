@@ -14,7 +14,7 @@ function scoreToEmoji(score, emoji) {
 function createPopup(restaurant) {
     return `
     <div>
-        <h1 class="display-4">${restaurant.Name}</h1>
+        <h4 class="display-4">${restaurant.Name}</h4>
 
         <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
           <button type="button" class="btn"><a href="${addressToLink(restaurant.Addresses)}" target="_blank"><i class="fa-solid fa-map"></i></i></a></button>
