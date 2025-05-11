@@ -52,3 +52,11 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.map-tooltip {
+    font-size: 10px;
+    color: black;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
