@@ -1,5 +1,5 @@
 async function loadRestaurants() {
-    const response = await fetch("http://localhost:8000/restaurants.json");
+    const response = await fetch("restaurants.json");
     const restaurants = await response.json();
 
     const validRestaurants = restaurants.filter(
