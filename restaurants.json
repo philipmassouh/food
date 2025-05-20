@@ -15,8 +15,8 @@
         "Yelp": "https://www.yelp.com/biz/apl-restaurant-los-angeles",
         "Addresses": "822 Washington Blvd, Marina Del Rey, CA 90292",
         "Comments": "This is an expensive BBQ popup with a long wait (1-2hrs) and changing locations-- that being said, it was amazing. I've been 4 times and it was a 10/10 every time. Must get the lamb chops and pork ribs. Don't get the beef rib.",
-        "lat": 33.9880768,
-        "lng": -118.4518361
+        "lat": null,
+        "lng": null
     },
     {
         "Name": "Augie's On Main",
@@ -166,7 +166,7 @@
         "Instagram": "https://www.instagram.com/cobis.la/",
         "Yelp": "https://www.yelp.com/biz/cobis-santa-monica",
         "Addresses": "2104 Main St, Santa Monica, CA 90405",
-        "Comments": "10/10 first time, 3/10 second time. not sure what to think...",
+        "Comments": "10/10 first time, 3/10 second time. 8/10 third time. Honestly, just don't order the nasi goreng or anything with pork belly and you will have an amazing meal.",
         "lat": 34.0062153,
         "lng": -118.4880632
     },
@@ -357,8 +357,8 @@
         "Yelp": "https://www.yelp.com/biz/mayura-indian-restaurant-culver-city",
         "Addresses": "10406 Venice Blvd., Culver City, CA 90232",
         "Comments": "Very good lamb saag. naan was stale",
-        "lat": null,
-        "lng": null
+        "lat": 34.0200244,
+        "lng": -118.4041351
     },
     {
         "Name": "Nick + Stef's",
@@ -547,8 +547,8 @@
         "Yelp": "https://www.yelp.com/biz/tire-shop-taqueria-los-angeles",
         "Addresses": "4065 S Avalon Blvd, Los Angeles, CA 90011",
         "Comments": "So good!! These are the best tacos in LA. It's in a dangerous area where you can get jumped or have a gun pulled on you. You're safe at the actual food spot though and the danger is worth it.",
-        "lat": 33.9967311,
-        "lng": -118.2652239
+        "lat": 33.9987269,
+        "lng": -118.2652237
     },
     {
         "Name": "Urthh Cafe",
@@ -584,7 +584,7 @@
         "Instagram": "https://www.instagram.com/wallflowerla/",
         "Yelp": "https://www.yelp.com/biz/wallflower-venice",
         "Addresses": "609 Rose Ave, Venice, CA 90291",
-        "Comments": "Was 9/10 first time, 2/10 second time, 8/10 third time... idk, I'll assume the 2 was a fluke and I am going to keep going.",
+        "Comments": "Was 9/10 first time, 2/10 second time, 8/10 third time... idk, I'll assume the 2 was a fluke and keep going.",
         "lat": 33.9994549,
         "lng": -118.4719497
     },
