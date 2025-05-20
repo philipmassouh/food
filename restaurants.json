@@ -1,7 +1,7 @@
 [
     {
         "Name": "Adam Perry Lang Popup",
-        "Type": "Barbecue",
+        "Tags": ["BBQ"],
         "Patio": true,
         "Noise": 0,
         "Chaos": 0,
@@ -20,7 +20,7 @@
     },
     {
         "Name": "Augie's On Main",
-        "Type": "FriedChicken",
+        "Tags": ["Fried Chicken"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 2,
@@ -39,7 +39,7 @@
     },
     {
         "Name": "Blossom Vietnamese",
-        "Type": "Vietnamese",
+        "Tags": ["Vietnamese"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 3,
@@ -58,7 +58,7 @@
     },
     {
         "Name": "Blue Plate Taco",
-        "Type": "Tacos",
+        "Tags": ["Tacos", "Mexican"],
         "Patio": true,
         "Noise": 4,
         "Chaos": 5,
@@ -77,7 +77,7 @@
     },
     {
         "Name": "Boa",
-        "Type": "Steak",
+        "Tags": ["Steak"],
         "Patio": false,
         "Noise": 4,
         "Chaos": 3,
@@ -96,7 +96,7 @@
     },
     {
         "Name": "Brothers Cousins Tacos",
-        "Type": "Tacos",
+        "Tags": ["Tacos", "Mexican"],
         "Patio": false,
         "Noise": 0,
         "Chaos": 5,
@@ -115,7 +115,7 @@
     },
     {
         "Name": "Catch Steak",
-        "Type": "Steak",
+        "Tags": ["Steak"],
         "Patio": true,
         "Noise": 4,
         "Chaos": 3,
@@ -134,7 +134,7 @@
     },
     {
         "Name": "Ceviche Stop",
-        "Type": "Seafood",
+        "Tags": ["Seafood", "Peruvian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -153,7 +153,7 @@
     },
     {
         "Name": "Cobi's",
-        "Type": "IndoUpscale",
+        "Tags": ["Thai", "Malaysian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -172,7 +172,7 @@
     },
     {
         "Name": "Connie & Ted's",
-        "Type": "Seafood",
+        "Tags": ["Seafood"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -191,7 +191,7 @@
     },
     {
         "Name": "DestroyerLA",
-        "Type": "Brunch",
+        "Tags": ["Brunch", "Scandinavian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 4,
@@ -210,7 +210,7 @@
     },
     {
         "Name": "Heavy Handed",
-        "Type": "Burger",
+        "Tags": ["Burger"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 3,
@@ -229,7 +229,7 @@
     },
     {
         "Name": "Isla",
-        "Type": "SocalHip",
+        "Tags": ["Californian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 1,
@@ -248,7 +248,7 @@
     },
     {
         "Name": "Jinya Ramen",
-        "Type": "Ramen",
+        "Tags": ["Ramen"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 2,
@@ -267,7 +267,7 @@
     },
     {
         "Name": "Layla's Bagel",
-        "Type": "Sandwich",
+        "Tags": ["Sandwich", "Bagel"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 5,
@@ -286,7 +286,7 @@
     },
     {
         "Name": "Locanda Portofino",
-        "Type": "Italian",
+        "Tags": ["Italian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -305,7 +305,7 @@
     },
     {
         "Name": "Manhattan Beach Post",
-        "Type": "SocalHip",
+        "Tags": ["Californian"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 3,
@@ -324,7 +324,7 @@
     },
     {
         "Name": "Massilia",
-        "Type": "SocalHip",
+        "Tags": ["Californian", "French", "Italian"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 3,
@@ -343,7 +343,7 @@
     },
     {
         "Name": "Mayura",
-        "Type": "Indian",
+        "Tags": ["Indian"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -362,7 +362,7 @@
     },
     {
         "Name": "Nick + Stef's",
-        "Type": "Steak",
+        "Tags": ["Steak"],
         "Patio": false,
         "Noise": 1,
         "Chaos": 1,
@@ -381,7 +381,7 @@
     },
     {
         "Name": "Pancho's Tacos",
-        "Type": "Tacos",
+        "Tags": ["Tacos", "Mexican"],
         "Patio": false,
         "Noise": 1,
         "Chaos": 1,
@@ -400,7 +400,7 @@
     },
     {
         "Name": "Saddle Ranch",
-        "Type": "Burger",
+        "Tags": ["Burger"],
         "Patio": false,
         "Noise": 4,
         "Chaos": 3,
@@ -419,7 +419,7 @@
     },
     {
         "Name": "Shoop's Deli",
-        "Type": "Deli",
+        "Tags": ["Deli", "Smoked Salmon"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 4,
@@ -438,7 +438,7 @@
     },
     {
         "Name": "Tar and Roses",
-        "Type": "SocalHip",
+        "Tags": ["California"],
         "Patio": true,
         "Noise": 5,
         "Chaos": 4,
@@ -457,7 +457,7 @@
     },
     {
         "Name": "Tehran Market BBQ",
-        "Type": "PersianBbq",
+        "Tags": ["Persian", "BBQ"],
         "Patio": false,
         "Noise": 0,
         "Chaos": 5,
@@ -476,7 +476,7 @@
     },
     {
         "Name": "The Girl and the Goat",
-        "Type": "NewAmerican",
+        "Tags": ["New American"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -495,7 +495,7 @@
     },
     {
         "Name": "The Penthouse",
-        "Type": "NewAmerican",
+        "Tags": ["New American"],
         "Patio": false,
         "Noise": 2,
         "Chaos": 2,
@@ -514,7 +514,7 @@
     },
     {
         "Name": "The Rose Venice",
-        "Type": "SocalHip",
+        "Tags": ["California"],
         "Patio": true,
         "Noise": 5,
         "Chaos": 5,
@@ -533,7 +533,7 @@
     },
     {
         "Name": "Tire shop tacqueria",
-        "Type": "TacoStand",
+        "Tags": ["Tacos", "Mexican"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -552,7 +552,7 @@
     },
     {
         "Name": "Urthh Cafe",
-        "Type": "Cafe",
+        "Tags": ["Cafe", "Breakfast", "Coffee"],
         "Patio": true,
         "Noise": 3,
         "Chaos": 5,
@@ -571,7 +571,7 @@
     },
     {
         "Name": "Wallflower",
-        "Type": "IndonesianFusion",
+        "Tags": ["Indonesian", "Fusion"],
         "Patio": true,
         "Noise": 5,
         "Chaos": 5,
@@ -590,7 +590,7 @@
     },
     {
         "Name": "Win-Dow",
-        "Type": "Burger",
+        "Tags": ["Burger"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 2,
@@ -609,7 +609,7 @@
     },
     {
         "Name": "Sapp Coffee",
-        "Type": "Thai",
+        "Tags": ["Thai"],
         "Patio": false,
         "Noise": 3,
         "Chaos": 3,
@@ -628,7 +628,7 @@
     },
     {
         "Name": "Library Alehouse",
-        "Type": "BarNewAmerican",
+        "Tags": ["Bar", "American"],
         "Patio": true,
         "Noise": 2,
         "Chaos": 3,
