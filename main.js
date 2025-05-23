@@ -8,6 +8,7 @@ async function loadRestaurants() {
         (restaurant) => restaurant.lat && restaurant.lng,
     );
 
+    /* TODO calcualte lat and long off of restaraunt values */
     const map = L.map("map").setView([33.9977671, -118.4748076], 12);
 
     L.tileLayer(
@@ -20,9 +21,14 @@ async function loadRestaurants() {
 
     function drawMarkers() {
         validRestaurants.forEach((restaurant) => {
-            const marker = L.marker([restaurant.lat, restaurant.lng]).addTo(
-                map,
-            );
+            const marker = L.circleMarker([restaurant.lat, restaurant.lng], {
+                radius: 7.5,
+                fillColor: "#02C39A",
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8,
+            }).addTo(map);
             marker.bindTooltip(restaurant.Name.toLowerCase(), {
                 permanent: tooltipsPermanent,
                 direction: "bottom",
@@ -30,20 +36,27 @@ async function loadRestaurants() {
             });
 
             marker.on("click", function () {
-                const modalContent = document.getElementById("modal-content");
-                modalContent.innerHTML = createPopup(restaurant);
+                const modalContent = document.getElementById("modal");
+                modalContent.innerHTML = buildModal(restaurant);
                 const modal = document.getElementById("modal");
-                modal.style.display = "block";
+                modal.style.visibility = "visible";
             });
         });
     }
 
     drawMarkers();
 
+    /* if loadRestaurants is called again this will have unexpected behvaior*/
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeModal();
+        }
+    });
+
     document.getElementById("toggle-tooltips").addEventListener("click", () => {
         tooltipsPermanent = !tooltipsPermanent;
         map.eachLayer((layer) => {
-            if (layer instanceof L.Marker) {
+            if (layer instanceof L.CircleMarker) {
                 map.removeLayer(layer);
             }
         });
@@ -52,7 +65,7 @@ async function loadRestaurants() {
 }
 
 function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    document.getElementById("modal").style.visibility = "hidden";
 }
 
 document.body.insertAdjacentHTML(

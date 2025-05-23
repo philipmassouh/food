@@ -11,61 +11,57 @@ function scoreToEmoji(score, emoji) {
     return emoji.repeat(score);
 }
 
-function createPopup(restaurant) {
+function buildButtons(restaurant) {
     return `
-    <div>
-        <h4 class="display-4">${restaurant.Name}</h4>
+        <div><button type="button" class="link-btn" id="close-btn" onclick="closeModal()">  <i id="close-icon" class="fa-solid fa-xmark">       </i></button></div>
+        <div><button type="button" class="link-btn"><a href="${addressToLink(restaurant.Addresses)}" target="_blank"><i class="fa-solid  fa-map">       </i></i></a></button></div>
+        <div><button type="button" class="link-btn"><a href="${restaurant.Site}"                     target="_blank"><i class="fa-solid  fa-link">      </i></a></button></div>
+        <div><button type="button" class="link-btn"><a href="${restaurant.Instagram}"                target="_blank"><i class="fa-brands fa-instagram"> </i></a></button></div>
+        <div><button type="button" class="link-btn"><a href="${restaurant.Yelp}"                     target="_blank"><i class="fa-brands fa-yelp">      </i></a></button></div>
+        `;
+}
 
-        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
-          <button type="button" class="btn"><a href="${addressToLink(restaurant.Addresses)}" target="_blank"><i class="fa-solid fa-map"></i></i></a></button>
-          <button type="button" class="btn"><a href="${restaurant.Site}" target="_blank"><i class="fa-solid fa-link"></i></a></button>
-          <button type="button" class="btn"><a href="${restaurant.Instagram}" target="_blank"><i class="fa-brands fa-instagram"></i></a></button>
-          <button type="button" class="btn"><a href="${restaurant.Yelp}" target="_blank"><i class="fa-brands fa-yelp"></i></a></button>
+function buildTags(restaurant) {
+    return `
+        ${restaurant.Tags.map((tag) => `<span class="modal-tag";">${tag}</span>`).join("")}
+    `;
+}
+
+
+function buildTable(restaurant) {
+    return `
+        <table id="modal-table">
+            <tr><td>Patio      </td><td>${restaurant.Patio ? "✅" : "❌"}           </td></tr>
+            <tr><td>Noise      </td><td>${scoreToEmoji(restaurant.Noise, "👂")}     </td></tr>
+            <tr><td>Chaos      </td><td>${scoreToEmoji(restaurant.Chaos, "💥")}     </td></tr>
+            <tr><td>Atmosphere </td><td>${scoreToEmoji(restaurant.Atmosphere, "⛩️")}</td></tr>
+            <tr><td>Service    </td><td>${scoreToEmoji(restaurant.Service, "😌")}   </td></tr>
+            <tr><td>Food       </td><td>${scoreToEmoji(restaurant.Food, "🧑‍🍳")}      </td></tr>
+            <tr><td>Value      </td><td>${scoreToEmoji(restaurant.Value, "⭐️")}     </td></tr>
+            <tr><td>Price      </td><td>${scoreToEmoji(restaurant.Price, "💰")}     </td></tr>
+        </table>  
+    `;
+}
+
+function buildModal(restaurant) {
+    return `
+        <div id="modal-left">
+            <div id="modal-title">
+                ${restaurant.Name}
+            </div>
+            <div id="modal-tags">
+                ${buildTags(restaurant)}
+            </div>
+            <div id="modal-table">
+                ${buildTable(restaurant)}
+            </div>
+            <div id="modal-quote">
+                ${restaurant.Comments}
+            </div>
         </div>
-
-        <div>
-            <b>Tags:</b>
-            ${restaurant.Tags.map((tag) => `<span style="border: 1px solid #ccc; padding: 2px 5px; border-radius: 5px; margin: 2px; display: inline-block;">${tag}</span>`).join("")}
-        </div>
-        <table id="modal-table" class="table table-sm">
-            <tr>
-                <td><b>Patio:</b></td>
-                <td>${restaurant.Patio ? "✅         " : "❌"}</td>
-            </tr>
-            <tr>
-                <td><b>Noise:</b></td>
-                <td>${scoreToEmoji(restaurant.Noise, "👂")}</td>
-            </tr>
-            <tr>
-                <td><b>Chaos:</b></td>
-                <td>${scoreToEmoji(restaurant.Chaos, "💥")}</td>
-            </tr>
-            <tr>
-                <td><b>Atmosphere:</b></td>
-                <td>${scoreToEmoji(restaurant.Atmosphere, "⭐️")}</td>
-            </tr>
-            <tr>
-                <td><b>Service:</b></td>
-                <td>${scoreToEmoji(restaurant.Service, "⭐️")}</td>
-            </tr>
-            <tr>
-                <td><b>Food:</b></td>
-                <td>${scoreToEmoji(restaurant.Food, "⭐️")}</td>
-            </tr>
-            <tr>
-                <td><b>Value:</b></td>
-                <td>${scoreToEmoji(restaurant.Value, "⭐️")}</td>
-            </tr>
-            <tr>
-                <td><b>Price:</b></td>
-                <td>${scoreToEmoji(restaurant.Price, "💰")}</td>
-            </tr>
-        </table>
-
-        <blockquote class="blockquote">
-          <p class="mb-0">${restaurant.Comments}</p>
-        </blockquote>
-
+        <div id="modal-right">
+            ${buildButtons(restaurant)}
         </div>
     `;
 }
+
