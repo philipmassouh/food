@@ -4,12 +4,6 @@
     --color-c: #00a896;
     --color-d: #02c39a;
     --color-e: #f0f3bd;
-
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --heading-color: #444;
-    --button-bg-color: #00a996;
-    --tooltip-text-color: black;
 }
 
 * {
@@ -120,8 +114,6 @@ body {
     text-align: left;
 }
 
-
-
 #modal-quote {
     /* color: var(--color-e); */
     color: white;
@@ -130,10 +122,9 @@ body {
     font-style: italic;
 }
 
-
 .map-tooltip {
     font-size: 10px;
-    color: var(--tooltip-text-color);
+    color: black;
     background: none;
     border: none;
     box-shadow: none;
