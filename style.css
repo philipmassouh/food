@@ -35,7 +35,7 @@ body {
 
 #modal {
     width: 500px;
-    max-height: 525px;
+    max-height: 545px;
 }
 
 @media (max-width: 768px) {
@@ -115,11 +115,20 @@ body {
     text-align: left;
 }
 
+#modal-address {
+    color: var(--color-e);
+    margin-bottom: 10px;
+}
+#modal-address > a {
+    color: var(--color-e);
+    text-decoration: none;
+}
+
 #modal-quote {
     /* color: var(--color-e); */
     color: white;
     overflow-y: scroll;
-    max-height: 100px;
+    max-height: 90px;
     font-style: italic;
 }
 

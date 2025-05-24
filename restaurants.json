@@ -1,7 +1,7 @@
 [
     {
-        "Name": "Adam Perry Lang Popup",
-        "Tags": ["BBQ"],
+        "Name": "Adam Perry Lang",
+        "Tags": ["BBQ", "Popup"],
         "Patio": true,
         "Noise": 0,
         "Chaos": 0,
@@ -13,10 +13,10 @@
         "Site": "https://www.opentable.com/r/apl-restaurant-los-angeles",
         "Instagram": "https://www.instagram.com/adamperrylang/",
         "Yelp": "https://www.yelp.com/biz/apl-restaurant-los-angeles",
-        "Addresses": "822 Washington Blvd, Marina Del Rey, CA 90292",
+        "Addresses": "822 Washington Blvd, Culver City, CA 90292",
         "Comments": "This is an expensive BBQ popup with a long wait (1-2hrs) and changing locations-- that being said, it was amazing. I've been 4 times and it was a 10/10 every time. Must get the lamb chops and pork ribs. Don't get the beef rib.",
-        "lat": null,
-        "lng": null
+        "lat": 33.9976928,
+        "lng": -118.4219953
     },
     {
         "Name": "Augie's On Main",
@@ -357,8 +357,8 @@
         "Yelp": "https://www.yelp.com/biz/mayura-indian-restaurant-culver-city",
         "Addresses": "10406 Venice Blvd., Culver City, CA 90232",
         "Comments": "Very good lamb saag. naan was stale",
-        "lat": 34.0200244,
-        "lng": -118.4041351
+        "lat": null,
+        "lng": null
     },
     {
         "Name": "Nick + Stef's",
@@ -527,7 +527,7 @@
         "Instagram": "https://www.instagram.com/therosevenice/",
         "Yelp": "https://www.yelp.com/biz/the-rose-venice",
         "Addresses": "220 Rose Ave, Venice, CA 90291",
-        "Comments": "(Out of business \ud83e\udef5\ud83d\ude02) This is one of those places that makes you feel like they're doing you a favor by taking your money. waitor took immense satisfaction in rudely refusing minor requests for modifications for my friend and his mom (meat doneness, burger sauce on the side). food was brought out at different times all cold, and unsalted. if their behavior were 10% worse, you'd think it was one of those gag restaurant that treats you like shit as a novelty",
+        "Comments": "(Out of business \ud83e\udef5\ud83d\ude02) This is one of those places that makes you feel like they're doing you a favor by taking your money. waiter took immense satisfaction in rudely refusing minor requests for modifications for my friend and his mom (meat doneness, burger sauce on the side). food was brought out at different times all cold, and unsalted. if their behavior were 10% worse, you'd think it was one of those gag restaurants that treats you like shit as a novelty",
         "lat": 33.9962903,
         "lng": -118.4771052
     },

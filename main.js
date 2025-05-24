@@ -8,7 +8,7 @@ async function loadRestaurants() {
         (restaurant) => restaurant.lat && restaurant.lng,
     );
 
-    const map = L.map("map").setView([33.9977671, -118.4748076], 12);
+    const map = L.map("map").setView([33.9977671, -118.4748076], 10);
 
     L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",

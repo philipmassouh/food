@@ -32,13 +32,18 @@ def geocode_address(address: str) -> tuple[float, float] | tuple[None, None]:
     logger.warning(f"Failed to geocode address: {address}")
     return None, None
 
-def _add_latlng_to_record(record: dict) -> dict:
-    if record["Addresses"] is not None:
-        lat, lng = geocode_address(record["Addresses"])
-        record["lat"] = lat
-        record["lng"] = lng
-    else:
+def _add_latlng_to_record(record: dict, skip_existing: bool = True) -> dict:
+    if skip_existing and (None not in ((record["lat"], record["lng"]))):
+        logger.info(f"Skipping record with existing lat/lng: {record['Name']}")
+        return record
+
+    if record["Addresses"] is None:
         logger.warning(f"Skipping record with no address: {record['Name']}")
+        return record
+
+    lat, lng = geocode_address(record["Addresses"])
+    record["lat"] = lat
+    record["lng"] = lng
     return record
 
 def process_file(fp: str, overwrite=False):
