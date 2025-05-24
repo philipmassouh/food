@@ -1,4 +1,4 @@
-let tooltipsPermanent = true;
+let tooltipsPermanent = false;
 
 async function loadRestaurants() {
     const response = await fetch("restaurants.json");
@@ -8,7 +8,6 @@ async function loadRestaurants() {
         (restaurant) => restaurant.lat && restaurant.lng,
     );
 
-    /* TODO calcualte lat and long off of restaraunt values */
     const map = L.map("map").setView([33.9977671, -118.4748076], 12);
 
     L.tileLayer(
@@ -27,7 +26,7 @@ async function loadRestaurants() {
                 color: "#000",
                 weight: 1,
                 opacity: 1,
-                fillOpacity: 0.8,
+                fillOpacity: 0.7,
             }).addTo(map);
             marker.bindTooltip(restaurant.Name.toLowerCase(), {
                 permanent: tooltipsPermanent,
@@ -46,7 +45,7 @@ async function loadRestaurants() {
 
     drawMarkers();
 
-    /* if loadRestaurants is called again this will have unexpected behvaior*/
+    //NOTE:if loadRestaurants is called again this will have unexpected behavior
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
             closeModal();
