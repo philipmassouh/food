@@ -41,7 +41,6 @@ body {
 @media (max-width: 768px) {
     #modal {
         width: 350px;
-        /* height: 400px */
     }
 }
 
@@ -128,7 +127,7 @@ body {
     /* color: var(--color-e); */
     color: white;
     overflow-y: scroll;
-    max-height: 90px;
+    max-height: 80px;
     font-style: italic;
 }
 
