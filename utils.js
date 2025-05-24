@@ -22,7 +22,7 @@ function buildButtons(restaurant) {
 
 function buildTags(restaurant) {
     return `
-        ${restaurant.Tags.map((tag) => `<span class="modal-tag";">${tag}</span>`).join("")}
+        ${restaurant.Tags.map((tag) => `<span class="modal-tag">${tag}</span>`).join("")}
     `;
 }
 

@@ -22,11 +22,11 @@ async function loadRestaurants() {
         validRestaurants.forEach((restaurant) => {
             const marker = L.circleMarker([restaurant.lat, restaurant.lng], {
                 radius: 7.5,
-                fillColor: "#02C39A",
-                color: "#000",
-                weight: 1,
+                fillColor: "transparent",
+                color: "#00a896",
+                weight: 2,
                 opacity: 1,
-                fillOpacity: 0.7,
+                fillOpacity: 1.0,
             }).addTo(map);
             marker.bindTooltip(restaurant.Name.toLowerCase(), {
                 permanent: tooltipsPermanent,
@@ -66,10 +66,5 @@ async function loadRestaurants() {
 function closeModal() {
     document.getElementById("modal").style.visibility = "hidden";
 }
-
-document.body.insertAdjacentHTML(
-    "beforeend",
-    '<button id="toggle-tooltips" style="position: absolute; top: 10px; right: 10px; z-index: 2000;">Toggle Names</button>',
-);
 
 loadRestaurants();
