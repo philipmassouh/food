@@ -20,6 +20,7 @@ def geocode_address(address: str) -> tuple[float, float] | tuple[None, None]:
         "format": "json",
         "limit": 1
     }
+    time.sleep(NOMINATUM_WAIT_TIME)
     resp = requests.get(NOMINATIM_URL, params=params, headers=HEADERS)
     data = resp.json()
     if data:
@@ -55,7 +56,6 @@ def process_file(fp: str, overwrite=False):
     def gen() -> tp.Generator[dict, None, None]:
         for record in records:
             yield _add_latlng_to_record(record)
-            time.sleep(NOMINATUM_WAIT_TIME)
 
     new_records = list(gen())
 
