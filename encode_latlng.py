@@ -34,7 +34,12 @@ def geocode_address(address: str) -> tuple[float, float] | tuple[None, None]:
     return None, None
 
 def _add_latlng_to_record(record: dict, skip_existing: bool = True) -> dict:
-    if skip_existing and (None not in ((record["lat"], record["lng"]))):
+    if (
+        skip_existing and (
+            ("lat" in record and "lng" in record) and
+            None not in (record["lat"], record["lng"])
+        )
+    ):
         logger.info(f"Skipping record with existing lat/lng: {record['Name']}")
         return record
 

@@ -772,5 +772,93 @@
     "Comments": "Venue is really great but the place kinda sucks. Just go for beers. They recently re-did the place to be some gross modern coastal design so the pictures you see online might be misleading.",
     "lat": 33.994634,
     "lng": -118.480274
+  },
+  {
+    "Name": "Lalibela Ethiopian Restaurant",
+    "Tags": [
+      "Ethiopian"
+    ],
+    "Patio": false,
+    "Noise": 1,
+    "Chaos": 1,
+    "Atmosphere": 3,
+    "Service": 4,
+    "Food": 4,
+    "Price": 3,
+    "Value": 3,
+    "Site": "",
+    "Instagram": "https://www.instagram.com/lalibela_restaurant/?hl=en",
+    "Yelp": "https://www.yelp.com/biz/lalibela-ethiopian-restaurant-los-angeles",
+    "Addresses": "1025 S Fairfax Avenue, Los Angeles, CA 90019",
+    "Comments": "Very tasty, nice atmosphere, friendly staff. Parking situation can get challenging.",
+    "lat": 34.0573772,
+    "lng": -118.3643897
+  },
+  {
+    "Name": "Wanderlust Creamery",
+    "Tags": [
+      "Dessert",
+      "Ice Cream"
+    ],
+    "Patio": false,
+    "Noise": 4,
+    "Chaos": 3,
+    "Atmosphere": 0,
+    "Service": 3,
+    "Food": 3,
+    "Price": 3,
+    "Value": 3,
+    "Site": "https://wanderlustcreamery.com",
+    "Instagram": "https://www.instagram.com/wanderlustcreamery/?hl=en",
+    "Yelp": "https://www.yelp.com/biz/wanderlust-creamery-los-angeles-6",
+    "Addresses": "609 Lincoln Blvd, Los Angeles, CA 90291",
+    "Comments": "Cool flavors, line moves slow. Get Ube",
+    "lat": 33.999838,
+    "lng": -118.4654056
+  },
+  {
+    "Name": "Bread Head",
+    "Tags": [
+      "Sandwich"
+    ],
+    "Patio": false,
+    "Noise": 4,
+    "Chaos": 4,
+    "Atmosphere": 3,
+    "Service": 3,
+    "Food": 3,
+    "Price": 4,
+    "Value": 2,
+    "Site": "https://www.breadheadla.com",
+    "Instagram": "https://www.instagram.com/breadheadla/?hl=en",
+    "Yelp": "https://www.yelp.com/biz/bread-head-santa-monica-5",
+    "Addresses": "1518 Montana Ave Santa Monica, CA 90403",
+    "Comments": "Very expensive. Enjoyed my sandwich but it's really not special and I wouldn't go out of my way to go.",
+    "lat": 34.0332635,
+    "lng": -118.4935448
+  },
+  {
+    "Name": "Talo Organic",
+    "Tags": [
+      "Bowl",
+      "American",
+      "Fusion",
+      "No Seed Oils"
+    ],
+    "Patio": true,
+    "Noise": 4,
+    "Chaos": 2,
+    "Atmosphere": 3,
+    "Service": 2,
+    "Food": 3,
+    "Price": 3,
+    "Value": 2,
+    "Site": "https://taloorganic.com",
+    "Instagram": "https://www.instagram.com/taloorganic/",
+    "Yelp": "https://www.yelp.com/biz/talo-organic-venice-3",
+    "Addresses": "401 Lincoln Blvd Venice, CA 90291",
+    "Comments": "Expensive and mediocre. Get fries. I like the place because it's made by that weirdo that gives people money to not go to crumbl.",
+    "lat": 34.000646,
+    "lng": -118.466612
   }
 ]
