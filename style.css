@@ -149,7 +149,7 @@ body {
 
 #toggle-tooltips {
     background-color: var(--color-c);
-    opacity: 0.7;
+    
     font-size: 0.8em;
     border: 0px;
     color: white;
