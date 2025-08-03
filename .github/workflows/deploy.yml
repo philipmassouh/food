@@ -17,4 +17,4 @@ jobs:
           ssh-keyscan -H philipmassouh.com >> ~/.ssh/known_hosts
 
       - name: Pull latest code
-        run: ssh pm@philipmassouh.com "cd /var/www/philipmassouh.com/html/food & git pull --ff""
+        run: ssh pm@philipmassouh.com "cd /var/www/philipmassouh.com/html/food & git pull --ff"
