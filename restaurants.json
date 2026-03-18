@@ -1166,5 +1166,27 @@
     "Comments": "Wow. This place is really good. It's expensive but given the quality and how overpriced sushi naturally is, this place is a no-brainer. It's a great spot for a date or a nice meal out. The service is also really good, took us right before closing and didn't act like we were pieces of shit. Get the trust menu, you get a lot of food and nice fish.",
     "lat": 33.885759,
     "lng": -118.409752
+  },
+  {
+    "Name": "Japonica - El Segundo",
+    "Tags": [
+      "Japanese",
+      "Sushi"
+    ],
+    "Patio": false,
+    "Noise": 3,
+    "Chaos": 3,
+    "Atmosphere": 3,
+    "Service": 3,
+    "Food": 3,
+    "Price": 3,
+    "Value": 3,
+    "Site": "https://japonicadining.com/",
+    "Instagram": "https://www.instagram.com/japonica.sushi/",
+    "Yelp": "https://www.yelp.com/biz/japonica-el-segundo-el-segundo-2",
+    "Addresses": "229 N Main St, El Segundo, CA 90245",
+    "Comments": "Not bad.",
+    "lat": 33.918199,
+    "lng": -118.416258
   }
 ]
