@@ -2,11 +2,6 @@ let tooltipsPermanent = false;
 let mapFilterMode = "been";
 
 const MAP_FILTER_MODES = ["been", "try", "both"];
-const MAP_FILTER_LABELS = {
-    been: "Been",
-    try: "Try",
-    both: "Both",
-};
 
 async function loadRestaurants() {
     const [restaurantsResponse, tryResponse] = await Promise.all([
@@ -37,39 +32,7 @@ async function loadRestaurants() {
         },
     ).addTo(map);
 
-    function createMapControls() {
-        const Control = L.Control.extend({
-            onAdd() {
-                const container = L.DomUtil.create("div", "map-control-panel");
-
-                const tooltipButton = L.DomUtil.create("button", "map-toggle", container);
-                tooltipButton.type = "button";
-                tooltipButton.id = "toggle-tooltips";
-                tooltipButton.textContent = "Toggle Names";
-
-                const filterButton = L.DomUtil.create(
-                    "button",
-                    "map-toggle map-toggle-try",
-                    container,
-                );
-                filterButton.type = "button";
-                filterButton.id = "toggle-try";
-                filterButton.textContent = MAP_FILTER_LABELS[mapFilterMode];
-
-                L.DomEvent.disableClickPropagation(container);
-                L.DomEvent.disableScrollPropagation(container);
-
-                return container;
-            },
-        });
-
-        return new Control({ position: "topright" });
-    }
-
-    createMapControls().addTo(map);
-
-    function bindControlAction(buttonId, action) {
-        const button = document.getElementById(buttonId);
+    function bindControlAction(target, action) {
         let lastHandledAt = 0;
 
         function handleControlEvent(event) {
@@ -85,11 +48,11 @@ async function loadRestaurants() {
             action();
         }
 
-        button.addEventListener("touchend", handleControlEvent, {
+        target.addEventListener("touchend", handleControlEvent, {
             passive: false,
         });
-        button.addEventListener("click", handleControlEvent);
-        button.addEventListener("keydown", (event) => {
+        target.addEventListener("click", handleControlEvent);
+        target.addEventListener("keydown", (event) => {
             if (event.key !== "Enter" && event.key !== " ") {
                 return;
             }
@@ -180,18 +143,24 @@ async function loadRestaurants() {
         }
     }
 
-    function syncFilterButton() {
-        document.getElementById("toggle-try").textContent =
-            MAP_FILTER_LABELS[mapFilterMode];
+    function setMapFilterMode(nextMode) {
+        if (!MAP_FILTER_MODES.includes(nextMode)) {
+            return;
+        }
+
+        mapFilterMode = nextMode;
+        syncLayerVisibility();
+        syncFilterButtons();
     }
 
-    function cycleMapFilterMode() {
-        const currentIndex = MAP_FILTER_MODES.indexOf(mapFilterMode);
-        const nextIndex = (currentIndex + 1) % MAP_FILTER_MODES.length;
-        mapFilterMode = MAP_FILTER_MODES[nextIndex];
+    function syncFilterButtons() {
+        MAP_FILTER_MODES.forEach((mode) => {
+            const button = document.getElementById(`filter-${mode}`);
+            const isActive = mode === mapFilterMode;
 
-        syncLayerVisibility();
-        syncFilterButton();
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
+        });
     }
 
     function drawMarkers() {
@@ -201,7 +170,7 @@ async function loadRestaurants() {
     }
 
     drawMarkers();
-    syncFilterButton();
+    syncFilterButtons();
 
     //NOTE:if loadRestaurants is called again this will have unexpected behavior
     document.addEventListener("keydown", (event) => {
@@ -210,13 +179,15 @@ async function loadRestaurants() {
         }
     });
 
-    bindControlAction("toggle-tooltips", () => {
+    bindControlAction(document.getElementById("toggle-tooltips"), () => {
         tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
     });
 
-    bindControlAction("toggle-try", () => {
-        cycleMapFilterMode();
+    MAP_FILTER_MODES.forEach((mode) => {
+        bindControlAction(document.getElementById(`filter-${mode}`), () => {
+            setMapFilterMode(mode);
+        });
     });
 }
 
