@@ -61,6 +61,7 @@ async function loadRestaurants() {
                 const modalContent = document.getElementById("modal");
                 modalContent.innerHTML = buildRestaurantModal(restaurant);
                 const modal = document.getElementById("modal");
+                modal.classList.remove("modal-try");
                 modal.style.visibility = "visible";
             });
         });
@@ -84,6 +85,7 @@ async function loadRestaurants() {
                 const modalContent = document.getElementById("modal");
                 modalContent.innerHTML = buildTryModal(spot);
                 const modal = document.getElementById("modal");
+                modal.classList.add("modal-try");
                 modal.style.visibility = "visible";
             });
         });
@@ -129,7 +131,9 @@ async function loadRestaurants() {
 }
 
 function closeModal() {
-    document.getElementById("modal").style.visibility = "hidden";
+    const modal = document.getElementById("modal");
+    modal.style.visibility = "hidden";
+    modal.classList.remove("modal-try");
 }
 
 loadRestaurants();
