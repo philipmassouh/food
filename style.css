@@ -5,6 +5,7 @@
     --color-d: #02c39a;
     --color-e: #f0f3bd;
     --color-try: #1d1d51;
+    --color-try-shadow: #f0f3bd;
 }
 
 * {
@@ -36,7 +37,7 @@ body {
 
 #modal.modal-try {
     background-color: var(--color-try);
-    box-shadow: 12px 12px 0px 0px var(--color-try);
+    box-shadow: 12px 12px 0px 0px var(--color-try-shadow);
 }
 
 #modal {

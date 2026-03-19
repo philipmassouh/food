@@ -1,5 +1,12 @@
 let tooltipsPermanent = false;
-let trySpotsVisible = false;
+let mapFilterMode = "been";
+
+const MAP_FILTER_MODES = ["been", "try", "both"];
+const MAP_FILTER_LABELS = {
+    been: "Been",
+    try: "Try",
+    both: "Both",
+};
 
 async function loadRestaurants() {
     const [restaurantsResponse, tryResponse] = await Promise.all([
@@ -91,26 +98,49 @@ async function loadRestaurants() {
         });
     }
 
-    function syncTryLayer() {
-        if (trySpotsVisible) {
-            if (!map.hasLayer(tryLayer)) {
-                tryLayer.addTo(map);
-            }
-            return;
+    function syncLayerVisibility() {
+        const showRestaurants = mapFilterMode === "been" || mapFilterMode === "both";
+        const showTrySpots = mapFilterMode === "try" || mapFilterMode === "both";
+
+        if (showRestaurants && !map.hasLayer(restaurantLayer)) {
+            restaurantLayer.addTo(map);
         }
 
-        if (map.hasLayer(tryLayer)) {
+        if (!showRestaurants && map.hasLayer(restaurantLayer)) {
+            map.removeLayer(restaurantLayer);
+        }
+
+        if (showTrySpots && !map.hasLayer(tryLayer)) {
+            tryLayer.addTo(map);
+        }
+
+        if (!showTrySpots && map.hasLayer(tryLayer)) {
             map.removeLayer(tryLayer);
         }
+    }
+
+    function syncFilterButton() {
+        document.getElementById("toggle-try").textContent =
+            MAP_FILTER_LABELS[mapFilterMode];
+    }
+
+    function cycleMapFilterMode() {
+        const currentIndex = MAP_FILTER_MODES.indexOf(mapFilterMode);
+        const nextIndex = (currentIndex + 1) % MAP_FILTER_MODES.length;
+        mapFilterMode = MAP_FILTER_MODES[nextIndex];
+
+        syncLayerVisibility();
+        syncFilterButton();
     }
 
     function drawMarkers() {
         drawRestaurantMarkers();
         drawTryMarkers();
-        syncTryLayer();
+        syncLayerVisibility();
     }
 
     drawMarkers();
+    syncFilterButton();
 
     //NOTE:if loadRestaurants is called again this will have unexpected behavior
     document.addEventListener("keydown", (event) => {
@@ -125,8 +155,7 @@ async function loadRestaurants() {
     });
 
     document.getElementById("toggle-try").addEventListener("click", () => {
-        trySpotsVisible = !trySpotsVisible;
-        syncTryLayer();
+        cycleMapFilterMode();
     });
 }
 
