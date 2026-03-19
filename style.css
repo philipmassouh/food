@@ -171,6 +171,8 @@ body {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 #toggle-try {

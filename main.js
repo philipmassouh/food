@@ -28,6 +28,7 @@ async function loadRestaurants() {
     const map = L.map("map").setView([33.9977671, -118.4748076], 10);
     const restaurantLayer = L.layerGroup().addTo(map);
     const tryLayer = L.layerGroup();
+    const topControls = document.getElementById("top-controls");
 
     L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
@@ -36,6 +37,32 @@ async function loadRestaurants() {
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         },
     ).addTo(map);
+
+    L.DomEvent.disableClickPropagation(topControls);
+    L.DomEvent.disableScrollPropagation(topControls);
+
+    function bindControlAction(buttonId, action) {
+        const button = document.getElementById(buttonId);
+        let lastPointerUp = 0;
+
+        button.addEventListener("pointerup", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            lastPointerUp = Date.now();
+            action();
+        });
+
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (Date.now() - lastPointerUp < 500) {
+                return;
+            }
+
+            action();
+        });
+    }
 
     function buildTryIcon() {
         return L.divIcon({
@@ -149,12 +176,12 @@ async function loadRestaurants() {
         }
     });
 
-    document.getElementById("toggle-tooltips").addEventListener("click", () => {
+    bindControlAction("toggle-tooltips", () => {
         tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
     });
 
-    document.getElementById("toggle-try").addEventListener("click", () => {
+    bindControlAction("toggle-try", () => {
         cycleMapFilterMode();
     });
 }
