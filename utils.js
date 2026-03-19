@@ -1,6 +1,6 @@
 function addressToLink(address) {
     const query = encodeURIComponent(address);
-    link = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    const link = `https://www.google.com/maps/search/?api=1&query=${query}`;
     return link;
 }
 
@@ -11,13 +11,29 @@ function scoreToEmoji(score, emoji) {
     return emoji.repeat(score);
 }
 
-function buildButtons(restaurant) {
+function buildLinkButton(url, iconClass) {
+    if (!url) {
+        return "";
+    }
+
+    return `
+        <div><button type="button" class="link-btn"><a href="${url}" target="_blank" rel="noreferrer"><i class="${iconClass}"></i></a></button></div>
+    `;
+}
+
+function buildCloseButton() {
     return `
         <div><button type="button" class="link-btn" id="close-btn" onclick="closeModal()">  <i id="close-icon" class="fa-solid fa-xmark">       </i></button></div>
-        <div><button type="button" class="link-btn"><a href="${restaurant.Site}"                     target="_blank"><i class="fa-solid  fa-link">      </i></a></button></div>
-        <div><button type="button" class="link-btn"><a href="${restaurant.Instagram}"                target="_blank"><i class="fa-brands fa-instagram"> </i></a></button></div>
-        <div><button type="button" class="link-btn"><a href="${restaurant.Yelp}"                     target="_blank"><i class="fa-brands fa-yelp">      </i></a></button></div>
-        `;
+    `;
+}
+
+function buildButtons(restaurant) {
+    return `
+        ${buildCloseButton()}
+        ${buildLinkButton(restaurant.Site, "fa-solid fa-link")}
+        ${buildLinkButton(restaurant.Instagram, "fa-brands fa-instagram")}
+        ${buildLinkButton(restaurant.Yelp, "fa-brands fa-yelp")}
+    `;
 }
 
 function buildTags(restaurant) {
@@ -41,7 +57,7 @@ function buildTable(restaurant) {
     `;
 }
 
-function buildModal(restaurant) {
+function buildRestaurantModal(restaurant) {
     return `
         <div id="modal-left">
             <div id="modal-title">
@@ -62,6 +78,35 @@ function buildModal(restaurant) {
         </div>
         <div id="modal-right">
             ${buildButtons(restaurant)}
+        </div>
+    `;
+}
+
+function buildTryModal(spot) {
+    const notes = spot.Notes
+        ? `
+            <div id="modal-quote">
+                ${spot.Notes}
+            </div>
+        `
+        : "";
+
+    return `
+        <div id="modal-left">
+            <div id="modal-title">
+                ${spot.Name}
+            </div>
+            <div id="modal-tags">
+                <span class="modal-tag">try</span>
+            </div>
+            <div id="modal-address">
+                <a href="${addressToLink(spot.Addresses)}" target="_blank" rel="noreferrer">${spot.Addresses}</a>
+            </div>
+            ${notes}
+        </div>
+        <div id="modal-right">
+            ${buildCloseButton()}
+            ${buildLinkButton(spot.Site, "fa-solid fa-link")}
         </div>
     `;
 }
