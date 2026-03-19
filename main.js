@@ -43,24 +43,31 @@ async function loadRestaurants() {
 
     function bindControlAction(buttonId, action) {
         const button = document.getElementById(buttonId);
-        let lastPointerUp = 0;
+        let lastHandledAt = 0;
 
-        button.addEventListener("pointerup", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            lastPointerUp = Date.now();
-            action();
-        });
-
-        button.addEventListener("click", (event) => {
+        function handleControlEvent(event) {
             event.preventDefault();
             event.stopPropagation();
 
-            if (Date.now() - lastPointerUp < 500) {
+            const now = Date.now();
+            if (now - lastHandledAt < 350) {
                 return;
             }
 
+            lastHandledAt = now;
             action();
+        }
+
+        button.addEventListener("touchend", handleControlEvent, {
+            passive: false,
+        });
+        button.addEventListener("click", handleControlEvent);
+        button.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+
+            handleControlEvent(event);
         });
     }
 
