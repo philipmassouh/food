@@ -28,7 +28,6 @@ async function loadRestaurants() {
     const map = L.map("map").setView([33.9977671, -118.4748076], 10);
     const restaurantLayer = L.layerGroup().addTo(map);
     const tryLayer = L.layerGroup();
-    const topControls = document.getElementById("top-controls");
 
     L.tileLayer(
         "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
@@ -38,8 +37,36 @@ async function loadRestaurants() {
         },
     ).addTo(map);
 
-    L.DomEvent.disableClickPropagation(topControls);
-    L.DomEvent.disableScrollPropagation(topControls);
+    function createMapControls() {
+        const Control = L.Control.extend({
+            onAdd() {
+                const container = L.DomUtil.create("div", "map-control-panel");
+
+                const tooltipButton = L.DomUtil.create("button", "map-toggle", container);
+                tooltipButton.type = "button";
+                tooltipButton.id = "toggle-tooltips";
+                tooltipButton.textContent = "Toggle Names";
+
+                const filterButton = L.DomUtil.create(
+                    "button",
+                    "map-toggle map-toggle-try",
+                    container,
+                );
+                filterButton.type = "button";
+                filterButton.id = "toggle-try";
+                filterButton.textContent = MAP_FILTER_LABELS[mapFilterMode];
+
+                L.DomEvent.disableClickPropagation(container);
+                L.DomEvent.disableScrollPropagation(container);
+
+                return container;
+            },
+        });
+
+        return new Control({ position: "topright" });
+    }
+
+    createMapControls().addTo(map);
 
     function bindControlAction(buttonId, action) {
         const button = document.getElementById(buttonId);
