@@ -398,5 +398,21 @@
     "Notes": null,
     "lat": 34.0732167,
     "lng": -118.2185772
+  },
+  {
+    "Name": "Saby's Coffee & Kitchen",
+    "Addresses": "12900 Venice Blvd, Los Angeles, CA 90066",
+    "Site": "https://cafesabys.com/",
+    "Notes": "Jacob said get burrito.",
+    "lat": 33.999494,
+    "lng": -118.441204
+  },
+  {
+    "Name": "UOVO Marina del Rey",
+    "Addresses": "4635 Admiralty Way #105, Marina Del Rey, CA 90292",
+    "Site": "https://uovo.la/locations/location-marina/",
+    "Notes": "Pasta place. Kael Adair says it is the best pasta in LA and even Italian food haters should go.",
+    "lat": 33.983087,
+    "lng": -118.442919
   }
 ]

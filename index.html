@@ -10,23 +10,15 @@
     </head>
     <body>
         <div id="map"></div>
-        <form id="map-controls" aria-label="Map controls">
-            <input type="checkbox" id="toggle-tooltips" class="control-input" />
-            <label for="toggle-tooltips" class="map-control-chip">Names</label>
+        <div id="map-controls" aria-label="Map controls">
+            <button type="button" class="map-control-chip" id="toggle-tooltips">Names</button>
 
-            <fieldset class="map-filter">
-                <legend class="sr-only">Map filter</legend>
-
-                <input type="radio" name="map-filter" id="filter-been" class="control-input" value="been" checked />
-                <label for="filter-been" class="map-filter-btn">Been</label>
-
-                <input type="radio" name="map-filter" id="filter-try" class="control-input" value="try" />
-                <label for="filter-try" class="map-filter-btn">Try</label>
-
-                <input type="radio" name="map-filter" id="filter-both" class="control-input" value="both" />
-                <label for="filter-both" class="map-filter-btn">Both</label>
-            </fieldset>
-        </form>
+            <div class="map-filter" role="group" aria-label="Map filter">
+                <button type="button" class="map-filter-btn" id="filter-been">Been</button>
+                <button type="button" class="map-filter-btn" id="filter-try">Try</button>
+                <button type="button" class="map-filter-btn" id="filter-both">Both</button>
+            </div>
+        </div>
         <div id="modal"></div>
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <script src="utils.js"></script>

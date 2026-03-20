@@ -169,19 +169,6 @@ body {
     touch-action: manipulation;
 }
 
-.sr-only,
-.control-input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
 .map-control-chip,
 .map-filter {
     border-radius: 999px;
@@ -201,6 +188,10 @@ body {
     white-space: nowrap;
 }
 
+.map-control-chip.is-active {
+    background-color: var(--color-try);
+}
+
 .map-filter {
     display: flex;
     align-items: center;
@@ -210,6 +201,7 @@ body {
 }
 
 .map-filter-btn {
+    border: none;
     background: transparent;
     color: var(--color-control-text);
     border-radius: 999px;
@@ -221,16 +213,13 @@ body {
     user-select: none;
 }
 
-#toggle-tooltips:checked + .map-control-chip,
-.control-input[name="map-filter"]:checked + .map-filter-btn {
+.map-filter-btn.is-active {
     background-color: var(--color-try);
     color: white;
 }
 
 .map-control-chip:focus-visible,
-.map-filter-btn:focus-visible,
-#toggle-tooltips:focus-visible + .map-control-chip,
-.control-input[name="map-filter"]:focus-visible + .map-filter-btn {
+.map-filter-btn:focus-visible {
     outline: 2px solid rgba(29, 29, 81, 0.4);
     outline-offset: 2px;
 }

@@ -32,6 +32,29 @@ async function loadRestaurants() {
         },
     ).addTo(map);
 
+    function bindTapAction(target, action) {
+        let lastActivationAt = 0;
+
+        function handleActivation(event) {
+            event.stopPropagation();
+
+            if (event.cancelable) {
+                event.preventDefault();
+            }
+
+            const now = Date.now();
+            if (now - lastActivationAt < 300) {
+                return;
+            }
+
+            lastActivationAt = now;
+            action();
+        }
+
+        target.addEventListener("pointerdown", handleActivation);
+        target.addEventListener("click", handleActivation);
+    }
+
     function buildTryIcon() {
         return L.divIcon({
             className: "try-marker",
@@ -125,11 +148,16 @@ async function loadRestaurants() {
     }
 
     function syncFilterControls() {
-        document.getElementById("toggle-tooltips").checked = tooltipsPermanent;
+        const tooltipButton = document.getElementById("toggle-tooltips");
+        tooltipButton.classList.toggle("is-active", tooltipsPermanent);
+        tooltipButton.setAttribute("aria-pressed", String(tooltipsPermanent));
 
         MAP_FILTER_MODES.forEach((mode) => {
             const button = document.getElementById(`filter-${mode}`);
-            button.checked = mode === mapFilterMode;
+            const isActive = mode === mapFilterMode;
+
+            button.classList.toggle("is-active", isActive);
+            button.setAttribute("aria-pressed", String(isActive));
         });
     }
 
@@ -149,18 +177,15 @@ async function loadRestaurants() {
         }
     });
 
-    document.getElementById("toggle-tooltips").addEventListener("change", (event) => {
-        tooltipsPermanent = event.target.checked;
+    bindTapAction(document.getElementById("toggle-tooltips"), () => {
+        tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
+        syncFilterControls();
     });
 
-    document.querySelectorAll('input[name="map-filter"]').forEach((input) => {
-        input.addEventListener("change", (event) => {
-            if (!event.target.checked) {
-                return;
-            }
-
-            setMapFilterMode(event.target.value);
+    MAP_FILTER_MODES.forEach((mode) => {
+        bindTapAction(document.getElementById(`filter-${mode}`), () => {
+            setMapFilterMode(mode);
         });
     });
 }
