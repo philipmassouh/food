@@ -169,13 +169,24 @@ body {
     touch-action: manipulation;
 }
 
+.sr-only,
+.control-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .map-control-chip,
 .map-filter {
     border-radius: 999px;
     background-color: var(--color-control-bg);
-    box-shadow: 0 10px 24px var(--color-control-shadow);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px var(--color-control-shadow);
 }
 
 .map-control-chip {
@@ -194,10 +205,11 @@ body {
     display: flex;
     align-items: center;
     padding: 4px;
+    margin: 0;
+    border: none;
 }
 
 .map-filter-btn {
-    border: none;
     background: transparent;
     color: var(--color-control-text);
     border-radius: 999px;
@@ -206,15 +218,19 @@ body {
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    user-select: none;
 }
 
-.map-filter-btn.is-active {
+#toggle-tooltips:checked + .map-control-chip,
+.control-input[name="map-filter"]:checked + .map-filter-btn {
     background-color: var(--color-try);
     color: white;
 }
 
 .map-control-chip:focus-visible,
-.map-filter-btn:focus-visible {
+.map-filter-btn:focus-visible,
+#toggle-tooltips:focus-visible + .map-control-chip,
+.control-input[name="map-filter"]:focus-visible + .map-filter-btn {
     outline: 2px solid rgba(29, 29, 81, 0.4);
     outline-offset: 2px;
 }
@@ -233,7 +249,7 @@ body {
 
     .map-control-chip,
     .map-filter {
-        box-shadow: 0 10px 20px rgba(6, 16, 42, 0.18);
+        box-shadow: 0 8px 18px rgba(6, 16, 42, 0.18);
     }
 
     .map-control-chip {

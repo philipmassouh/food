@@ -32,35 +32,6 @@ async function loadRestaurants() {
         },
     ).addTo(map);
 
-    function bindControlAction(target, action) {
-        let lastHandledAt = 0;
-
-        function handleControlEvent(event) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            const now = Date.now();
-            if (now - lastHandledAt < 350) {
-                return;
-            }
-
-            lastHandledAt = now;
-            action();
-        }
-
-        target.addEventListener("touchend", handleControlEvent, {
-            passive: false,
-        });
-        target.addEventListener("click", handleControlEvent);
-        target.addEventListener("keydown", (event) => {
-            if (event.key !== "Enter" && event.key !== " ") {
-                return;
-            }
-
-            handleControlEvent(event);
-        });
-    }
-
     function buildTryIcon() {
         return L.divIcon({
             className: "try-marker",
@@ -150,16 +121,15 @@ async function loadRestaurants() {
 
         mapFilterMode = nextMode;
         syncLayerVisibility();
-        syncFilterButtons();
+        syncFilterControls();
     }
 
-    function syncFilterButtons() {
+    function syncFilterControls() {
+        document.getElementById("toggle-tooltips").checked = tooltipsPermanent;
+
         MAP_FILTER_MODES.forEach((mode) => {
             const button = document.getElementById(`filter-${mode}`);
-            const isActive = mode === mapFilterMode;
-
-            button.classList.toggle("is-active", isActive);
-            button.setAttribute("aria-pressed", String(isActive));
+            button.checked = mode === mapFilterMode;
         });
     }
 
@@ -170,7 +140,7 @@ async function loadRestaurants() {
     }
 
     drawMarkers();
-    syncFilterButtons();
+    syncFilterControls();
 
     //NOTE:if loadRestaurants is called again this will have unexpected behavior
     document.addEventListener("keydown", (event) => {
@@ -179,14 +149,18 @@ async function loadRestaurants() {
         }
     });
 
-    bindControlAction(document.getElementById("toggle-tooltips"), () => {
-        tooltipsPermanent = !tooltipsPermanent;
+    document.getElementById("toggle-tooltips").addEventListener("change", (event) => {
+        tooltipsPermanent = event.target.checked;
         drawMarkers();
     });
 
-    MAP_FILTER_MODES.forEach((mode) => {
-        bindControlAction(document.getElementById(`filter-${mode}`), () => {
-            setMapFilterMode(mode);
+    document.querySelectorAll('input[name="map-filter"]').forEach((input) => {
+        input.addEventListener("change", (event) => {
+            if (!event.target.checked) {
+                return;
+            }
+
+            setMapFilterMode(event.target.value);
         });
     });
 }
