@@ -32,28 +32,12 @@ async function loadRestaurants() {
         },
     ).addTo(map);
 
-    function bindTapAction(target, action) {
-        let lastActivationAt = 0;
-
-        function handleActivation(event) {
+    const controls = document.getElementById("map-controls");
+    ["pointerdown", "touchstart", "mousedown", "dblclick", "click"].forEach((eventName) => {
+        controls.addEventListener(eventName, (event) => {
             event.stopPropagation();
-
-            if (event.cancelable) {
-                event.preventDefault();
-            }
-
-            const now = Date.now();
-            if (now - lastActivationAt < 300) {
-                return;
-            }
-
-            lastActivationAt = now;
-            action();
-        }
-
-        target.addEventListener("pointerdown", handleActivation);
-        target.addEventListener("click", handleActivation);
-    }
+        });
+    });
 
     function buildTryIcon() {
         return L.divIcon({
@@ -79,7 +63,7 @@ async function loadRestaurants() {
             marker.bindTooltip(restaurant.Name.toLowerCase(), {
                 permanent: tooltipsPermanent,
                 direction: "bottom",
-                className: "custom-tooltip",
+                className: "map-tooltip",
             });
 
             marker.on("click", function () {
@@ -103,7 +87,7 @@ async function loadRestaurants() {
             marker.bindTooltip(spot.Name.toLowerCase(), {
                 permanent: tooltipsPermanent,
                 direction: "bottom",
-                className: "custom-tooltip",
+                className: "map-tooltip",
             });
 
             marker.on("click", function () {
@@ -177,14 +161,14 @@ async function loadRestaurants() {
         }
     });
 
-    bindTapAction(document.getElementById("toggle-tooltips"), () => {
+    document.getElementById("toggle-tooltips").addEventListener("click", () => {
         tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
         syncFilterControls();
     });
 
     MAP_FILTER_MODES.forEach((mode) => {
-        bindTapAction(document.getElementById(`filter-${mode}`), () => {
+        document.getElementById(`filter-${mode}`).addEventListener("click", () => {
             setMapFilterMode(mode);
         });
     });

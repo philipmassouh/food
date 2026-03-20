@@ -169,23 +169,18 @@ body {
     touch-action: manipulation;
 }
 
-.map-control-chip,
-.map-filter {
-    border-radius: 999px;
-    background-color: var(--color-control-bg);
-    box-shadow: 0 8px 20px var(--color-control-shadow);
-}
-
 .map-control-chip {
-    background-color: var(--color-c);
+    background-color: rgba(0, 168, 150, 0.92);
     font-size: 0.8em;
     border: none;
     color: white;
-    padding: 11px 16px;
+    padding: 10px 14px;
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     white-space: nowrap;
+    border-radius: 999px;
+    box-shadow: 0 10px 24px var(--color-control-shadow);
 }
 
 .map-control-chip.is-active {
@@ -198,6 +193,9 @@ body {
     padding: 4px;
     margin: 0;
     border: none;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.72);
+    box-shadow: 0 10px 24px var(--color-control-shadow);
 }
 
 .map-filter-btn {
@@ -236,13 +234,13 @@ body {
         gap: 10px;
     }
 
-    .map-control-chip,
     .map-filter {
         box-shadow: 0 8px 18px rgba(6, 16, 42, 0.18);
     }
 
     .map-control-chip {
         flex: 0 0 auto;
+        box-shadow: 0 8px 18px rgba(6, 16, 42, 0.18);
     }
 
     .map-filter {
