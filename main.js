@@ -33,11 +33,43 @@ async function loadRestaurants() {
     ).addTo(map);
 
     const controls = document.getElementById("map-controls");
-    ["pointerdown", "touchstart", "mousedown", "dblclick", "click"].forEach((eventName) => {
+    L.DomEvent.disableClickPropagation(controls);
+    L.DomEvent.disableScrollPropagation(controls);
+    ["touchstart", "touchend", "mousedown", "dblclick"].forEach((eventName) => {
         controls.addEventListener(eventName, (event) => {
             event.stopPropagation();
         });
     });
+
+    function bindControl(button, action) {
+        let touched = false;
+
+        button.addEventListener(
+            "touchend",
+            (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                touched = true;
+                action();
+
+                window.setTimeout(() => {
+                    touched = false;
+                }, 350);
+            },
+            { passive: false },
+        );
+
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (touched) {
+                return;
+            }
+
+            action();
+        });
+    }
 
     function buildTryIcon() {
         return L.divIcon({
@@ -161,14 +193,14 @@ async function loadRestaurants() {
         }
     });
 
-    document.getElementById("toggle-tooltips").addEventListener("click", () => {
+    bindControl(document.getElementById("toggle-tooltips"), () => {
         tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
         syncFilterControls();
     });
 
     MAP_FILTER_MODES.forEach((mode) => {
-        document.getElementById(`filter-${mode}`).addEventListener("click", () => {
+        bindControl(document.getElementById(`filter-${mode}`), () => {
             setMapFilterMode(mode);
         });
     });
