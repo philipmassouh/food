@@ -35,41 +35,6 @@ async function loadRestaurants() {
     const controls = document.getElementById("map-controls");
     L.DomEvent.disableClickPropagation(controls);
     L.DomEvent.disableScrollPropagation(controls);
-    ["touchstart", "touchend", "mousedown", "dblclick"].forEach((eventName) => {
-        controls.addEventListener(eventName, (event) => {
-            event.stopPropagation();
-        });
-    });
-
-    function bindControl(button, action) {
-        let touched = false;
-
-        button.addEventListener(
-            "touchend",
-            (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                touched = true;
-                action();
-
-                window.setTimeout(() => {
-                    touched = false;
-                }, 350);
-            },
-            { passive: false },
-        );
-
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-
-            if (touched) {
-                return;
-            }
-
-            action();
-        });
-    }
 
     function buildTryIcon() {
         return L.divIcon({
@@ -193,14 +158,14 @@ async function loadRestaurants() {
         }
     });
 
-    bindControl(document.getElementById("toggle-tooltips"), () => {
+    document.getElementById("toggle-tooltips").addEventListener("click", () => {
         tooltipsPermanent = !tooltipsPermanent;
         drawMarkers();
         syncFilterControls();
     });
 
     MAP_FILTER_MODES.forEach((mode) => {
-        bindControl(document.getElementById(`filter-${mode}`), () => {
+        document.getElementById(`filter-${mode}`).addEventListener("click", () => {
             setMapFilterMode(mode);
         });
     });

@@ -225,11 +225,11 @@ body {
 @media (max-width: 768px) {
     #map-controls {
         top: auto;
-        right: auto;
-        left: 50%;
+        left: 0;
+        right: 0;
         bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-        transform: translateX(-50%);
         width: calc(100vw - 24px);
+        margin: 0 auto;
         justify-content: center;
         gap: 10px;
     }
