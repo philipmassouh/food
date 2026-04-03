@@ -1188,5 +1188,93 @@
     "Comments": "Not bad.",
     "lat": 33.918199,
     "lng": -118.416258
+  },
+  {
+    "Name": "Mom, Please",
+    "Tags": [
+      "Ukrainian",
+      "LARP"
+    ],
+    "Patio": true,
+    "Noise": 1,
+    "Chaos": 1,
+    "Atmosphere": 3,
+    "Service": 1,
+    "Food": 3,
+    "Price": 3,
+    "Value": 3,
+    "Site": null,
+    "Instagram": "https://www.instagram.com/mompleasela/",
+    "Yelp": "https://www.yelp.com/biz/mom-please-ukrainian-food-playa-vista",
+    "Addresses": "13151 Fountain Park Dr, Los Angeles, CA 90094",
+    "Comments": "It's like polish food but worse and they serve Ukranians first no matter what. Lot's of Ukranian Los Angelinos there... Nice outdoor seating, larping as cute European cafe. Not bad but wouldn't necessarily recommend.",
+    "lat": 33.9750768,
+    "lng": -118.430121
+  },
+  {
+    "Name": "Bacari",
+    "Tags": [
+      "Israeli"
+    ],
+    "Patio": false,
+    "Noise": 4,
+    "Chaos": 4,
+    "Atmosphere": 4,
+    "Service": 4,
+    "Food": 3,
+    "Price": 4,
+    "Value": 2,
+    "Site": "https://www.eatwithbacari.com/culver-city",
+    "Instagram": "https://www.instagram.com/eatwithbacari/",
+    "Yelp": "https://www.yelp.com/biz/bacari-culver-city-culver-city-29",
+    "Addresses": "3833 Main St, Culver City, CA 90232",
+    "Comments": "...",
+    "lat": 34.0244942,
+    "lng": -118.3944115
+  },
+  {
+    "Name": "The Cloverfield",
+    "Tags": [
+      "Bar",
+      "American"
+    ],
+    "Patio": true,
+    "Noise": 3,
+    "Chaos": 2,
+    "Atmosphere": 4,
+    "Service": 3,
+    "Food": 3,
+    "Price": 3,
+    "Value": 3,
+    "Site": "https://thecloverfield.net",
+    "Instagram": "https://www.instagram.com/thecloverfield_/",
+    "Yelp": "https://www.yelp.com/biz/the-cloverfield-santa-monica-2",
+    "Addresses": "3300 Airport Ave, Santa Monica, CA 90405",
+    "Comments": "Great spot, large patio, very serene and spacious.",
+    "lat": 34.0157504,
+    "lng": -118.4460078
+  },
+  {
+    "Name": "Fishbar",
+    "Tags": [
+      "Oysters",
+      "Seafood",
+      "Bar"
+    ],
+    "Patio": false,
+    "Noise": 4,
+    "Chaos": 4,
+    "Atmosphere": 3,
+    "Service": 2,
+    "Food": 2,
+    "Price": 4,
+    "Value": 1,
+    "Site": "https://www.fishbarmb.com/",
+    "Instagram": "https://www.instagram.com/fishbarmb/",
+    "Yelp": "https://www.yelp.com/biz/fishbar-manhattan-beach-2",
+    "Addresses": "3801 Highland Ave, Manhattan Beach, CA 90266",
+    "Comments": "This place sucks but I guess margaritas and oysters are good.",
+    "lat": 33.9017119,
+    "lng": -118.4182952
   }
 ]
