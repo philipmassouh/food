@@ -300,6 +300,27 @@
     "lng": -118.495445
   },
   {
+    "Name": "Jame Enoteca",
+    "Tags": [
+      "Italian"
+    ],
+    "Patio": true,
+    "Noise": 2,
+    "Chaos": 2,
+    "Atmosphere": 4,
+    "Service": 3,
+    "Food": 2,
+    "Price": 4,
+    "Value": 2,
+    "Site": "https://eatjame.com/",
+    "Instagram": "https://www.instagram.com/eatjame/",
+    "Yelp": "https://www.yelp.com/biz/jame-enoteca-el-segundo-6",
+    "Addresses": "241 Main St, El Segundo, CA 90245",
+    "Comments": "Another gem from the cabal of 'Italian' scammers that love to charge the big bucks for tube of noodle with tomato sauce. My chicken parmesan was okay, but the noodles that were like an extra 20 dollars were a single congealed blob. Nice place to sit and cocktails are mid+. Would probably not go back.",
+    "lat": 33.9182856,
+    "lng": -118.4163671
+  },
+  {
     "Name": "Jinya Ramen",
     "Tags": [
       "Ramen"
