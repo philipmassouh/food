@@ -64,6 +64,14 @@
     "lng": -118.287797
   },
   {
+    "Name": "Fia",
+    "Addresses": "2454 Wilshire Blvd, Santa Monica, CA 90403",
+    "Site": "https://www.fiarestaurant.com/",
+    "Notes": "Italian.",
+    "lat": 34.0350068,
+    "lng": -118.4784803
+  },
+  {
     "Name": "FIG",
     "Addresses": "101 Wilshire Blvd, Santa Monica, CA 90401",
     "Site": "https://www.figsantamonica.com/",
@@ -72,12 +80,28 @@
     "lng": -118.5016131
   },
   {
+    "Name": "Gjusta",
+    "Addresses": "320 Sunset Ave, Venice, CA 90291",
+    "Site": "https://gjusta.com/",
+    "Notes": "Bakery and deli.",
+    "lat": 33.995296,
+    "lng": -118.474579
+  },
+  {
     "Name": "Goldburger",
     "Addresses": "1820 N Vermont Ave, Los Angeles, CA 90027",
     "Site": "https://www.goldburgerla.com/",
     "Notes": "TikTok rizzlers like this place.",
     "lat": 34.1042838,
     "lng": -118.2916282
+  },
+  {
+    "Name": "Great White Venice",
+    "Addresses": "1604 Pacific Ave, Venice, CA 90291",
+    "Site": "https://www.greatwhite.cafe/locations",
+    "Notes": "All-day cafe.",
+    "lat": 33.9876989,
+    "lng": -118.4721044
   },
   {
     "Name": "Guelaguetza",
@@ -238,6 +262,14 @@
     "Notes": "Spanish food. Recommended by Max K.",
     "lat": 34.052285,
     "lng": -118.4712044
+  },
+  {
+    "Name": "Taverna at The Mar Vista",
+    "Addresses": "12249 Venice Blvd, Los Angeles, CA 90066",
+    "Site": "https://www.themarvista.com/",
+    "Notes": "Greek.",
+    "lat": 34.0044103,
+    "lng": -118.4317403
   },
   {
     "Name": "Tev's Family Kitchen",
