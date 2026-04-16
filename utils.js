@@ -1,3 +1,71 @@
+function scoreToDots(score) {
+    if (score === 0) return "—";
+    const filled = '<span class="dot-filled">●</span>'.repeat(score);
+    const empty = '<span class="dot-empty">○</span>'.repeat(5 - score);
+    return filled + empty;
+}
+
+function buildBeenTableHTML(restaurants, sortKey, sortDirection) {
+    const columns = [
+        { key: "Name", label: "Name" },
+        { key: "Tags", label: "Tags" },
+        { key: "Food", label: "Food" },
+        { key: "Value", label: "Value" },
+        { key: "Price", label: "Price" },
+        { key: "Patio", label: "Patio" },
+        { key: "Addresses", label: "Address" },
+    ];
+
+    const thead = columns.map((col) => {
+        let arrow = "";
+        if (col.key === sortKey) {
+            arrow = sortDirection === "asc" ? " ▲" : " ▼";
+        }
+        return `<th data-sort-key="${col.key}">${col.label}${arrow}</th>`;
+    }).join("");
+
+    const tbody = restaurants.map((r, i) => {
+        const tags = (r.Tags || []).map((t) => `<span class="table-tag">${t}</span>`).join("");
+        return `<tr data-index="${i}" data-type="been">
+            <td class="table-name">${r.Name}</td>
+            <td>${tags}</td>
+            <td class="table-score">${scoreToDots(r.Food)}</td>
+            <td class="table-score">${scoreToDots(r.Value)}</td>
+            <td class="table-score">${scoreToDots(r.Price)}</td>
+            <td class="table-patio">${r.Patio ? "✓" : "—"}</td>
+            <td><a href="${addressToLink(r.Addresses)}" target="_blank" rel="noreferrer" class="table-address" onclick="event.stopPropagation()">${r.Addresses}</a></td>
+        </tr>`;
+    }).join("");
+
+    return `<table class="spot-table"><thead><tr>${thead}</tr></thead><tbody>${tbody}</tbody></table>`;
+}
+
+function buildTryTableHTML(trySpots, sortKey, sortDirection) {
+    const columns = [
+        { key: "Name", label: "Name" },
+        { key: "Notes", label: "Notes" },
+        { key: "Addresses", label: "Address" },
+    ];
+
+    const thead = columns.map((col) => {
+        let arrow = "";
+        if (col.key === sortKey) {
+            arrow = sortDirection === "asc" ? " ▲" : " ▼";
+        }
+        return `<th data-sort-key="${col.key}">${col.label}${arrow}</th>`;
+    }).join("");
+
+    const tbody = trySpots.map((s, i) => {
+        return `<tr data-index="${i}" data-type="try">
+            <td class="table-name">${s.Name}</td>
+            <td>${s.Notes || ""}</td>
+            <td><a href="${addressToLink(s.Addresses)}" target="_blank" rel="noreferrer" class="table-address" onclick="event.stopPropagation()">${s.Addresses}</a></td>
+        </tr>`;
+    }).join("");
+
+    return `<table class="spot-table spot-table-try"><thead><tr>${thead}</tr></thead><tbody>${tbody}</tbody></table>`;
+}
+
 function addressToLink(address) {
     const query = encodeURIComponent(address);
     const link = `https://www.google.com/maps/search/?api=1&query=${query}`;

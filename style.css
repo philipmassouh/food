@@ -253,6 +253,148 @@ body {
     }
 }
 
+/* Table view */
+
+#table-view {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    background-color: #fafafa;
+    padding: 0 24px 24px 24px;
+}
+
+#table-view::before {
+    content: "";
+    display: block;
+    height: 52px;
+}
+
+.table-section-header {
+    color: var(--color-a);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 24px 0 8px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-c);
+}
+
+.table-section-header:first-child {
+    margin-top: 0;
+}
+
+.table-section-try {
+    border-left: 3px solid var(--color-try);
+    padding-left: 8px;
+}
+
+.spot-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.82em;
+}
+
+.spot-table th {
+    position: sticky;
+    top: 0;
+    background: #fafafa;
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--color-a);
+    border-bottom: 2px solid var(--color-c);
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0 2px 0 var(--color-c);
+}
+
+.spot-table th:hover {
+    color: var(--color-b);
+}
+
+.spot-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.spot-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.spot-table tbody tr:hover {
+    background-color: rgba(0, 168, 150, 0.08);
+}
+
+.table-name {
+    font-weight: bold;
+    color: var(--color-a);
+    white-space: nowrap;
+}
+
+.table-tag {
+    border: 1px solid var(--color-b);
+    color: var(--color-a);
+    padding: 1px 5px;
+    margin-right: 4px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+.table-score {
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+.dot-filled {
+    color: var(--color-c);
+}
+
+.dot-empty {
+    color: #ccc;
+}
+
+.table-patio {
+    text-align: center;
+}
+
+.table-address {
+    color: var(--color-b);
+    text-decoration: none;
+}
+
+.table-address:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    #table-view {
+        padding: 16px 10px 80px 10px;
+        overflow-x: auto;
+    }
+
+    .spot-table {
+        font-size: 0.78em;
+        min-width: 600px;
+    }
+
+    .spot-table th,
+    .spot-table td {
+        padding: 8px;
+    }
+
+    .table-name {
+        position: sticky;
+        left: 0;
+        background: #fafafa;
+        z-index: 1;
+    }
+}
+
 .try-marker {
     background: transparent;
     border: 0;
