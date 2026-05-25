@@ -1297,5 +1297,71 @@
     "Comments": "This place sucks but I guess margaritas and oysters are good.",
     "lat": 33.9017119,
     "lng": -118.4182952
+  },
+  {
+    "Name": "Jaime",
+    "Tags": [
+      "Tacos",
+      "Mexican"
+    ],
+    "Patio": true,
+    "Noise": 2,
+    "Chaos": 1,
+    "Atmosphere": 4,
+    "Service": 2,
+    "Food": 2,
+    "Price": 3,
+    "Value": 2,
+    "Site": "https://jaimetaqueria.com/",
+    "Instagram": "https://www.instagram.com/jaimetaqueria/",
+    "Yelp": "https://www.yelp.com/biz/jaime-el-segundo",
+    "Addresses": "450 Main St, El Segundo, CA 90245",
+    "Comments": "Nice patio, margaritas are okay, salsa flight sucked and I really don't like their sibling restaurant Jame so I'm going to say NACK.",
+    "lat": 33.9220924,
+    "lng": -118.4155736
+  },
+  {
+    "Name": "Sausal",
+    "Tags": [
+      "Mexican",
+      "Cocktails",
+      "Date Night"
+    ],
+    "Patio": true,
+    "Noise": 3,
+    "Chaos": 2,
+    "Atmosphere": 4,
+    "Service": 2,
+    "Food": 4,
+    "Price": 4,
+    "Value": 3,
+    "Site": "https://www.sausal.com/",
+    "Instagram": "https://www.instagram.com/sausalrestaurant/",
+    "Yelp": "https://www.yelp.com/biz/sausal-el-segundo",
+    "Addresses": "219 Main St, El Segundo, CA 90245",
+    "Comments": "My food was excellent, everyone loved their food, server was an idiot and inattentive but I would recommend this place.",
+    "lat": 33.9180018,
+    "lng": -118.4161757
+  },
+  {
+    "Name": "Dan Modern Chinese",
+    "Tags": [
+      "Chinese"
+    ],
+    "Patio": false,
+    "Noise": 3,
+    "Chaos": 2,
+    "Atmosphere": 2,
+    "Service": 4,
+    "Food": 3,
+    "Price": 3,
+    "Value": 3,
+    "Site": "https://www.danmodernchinese.com/pages/manhattan-beach",
+    "Instagram": "https://www.instagram.com/danmodernchinese/",
+    "Yelp": "https://www.yelp.com/biz/dan-modern-chinese-manhattan-beach",
+    "Addresses": "3160 N Sepulveda Blvd, Manhattan Beach, CA 90266",
+    "Comments": "My food was great. I would come here regularly, probably takeout but don't mind. People say you go to a mom and pop place for authentic Chinese food, but I'd say the most authentic Chinese culinary experience is Dan Modern Chinese -- it's like eating in a hospital.",
+    "lat": 33.8982154,
+    "lng": -118.395918
   }
 ]
