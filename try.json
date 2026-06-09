@@ -438,5 +438,69 @@
     "Notes": "Pasta place. Kael Adair says it is the best pasta in LA and even Italian food haters should go.",
     "lat": 33.983087,
     "lng": -118.442919
+  },
+  {
+    "Name": "Townhouse Venice",
+    "Addresses": "52 Windward Ave, Venice, CA 90291",
+    "Site": "https://www.townhousevenice.com/music",
+    "Notes": "The Del Monte Speakeasy (downstairs); live music.",
+    "lat": 33.9872485,
+    "lng": -118.4726526
+  },
+  {
+    "Name": "Osteria Mozza",
+    "Addresses": "6602 Melrose Ave, Los Angeles, CA 90038",
+    "Site": "https://www.osteriamozza.com/",
+    "Notes": "Recommended by John Madigan, otherwise wouldn't go.",
+    "lat": 34.0833739,
+    "lng": -118.3387469
+  },
+  {
+    "Name": "Zebulon",
+    "Addresses": "2478 Fletcher Dr, Los Angeles, CA 90039",
+    "Site": "https://zebulon.la/",
+    "Notes": "Live music venue. Recommended by John Madigan.",
+    "lat": 34.1071951,
+    "lng": -118.2547392
+  },
+  {
+    "Name": "Lunasia Dim Sum",
+    "Addresses": "2575 Pacific Coast Hwy, Torrance, CA 90505",
+    "Site": "https://www.lunasiadimsum.com/",
+    "Notes": null,
+    "lat": 33.7911744,
+    "lng": -118.331744
+  },
+  {
+    "Name": "Fishing with Dynamite",
+    "Addresses": "1148 Manhattan Ave, Manhattan Beach, CA 90266",
+    "Site": "https://eatfwd.com/",
+    "Notes": null,
+    "lat": 33.8853787,
+    "lng": -118.4108571
+  },
+  {
+    "Name": "The Apple Pan",
+    "Addresses": "10801 W Pico Blvd, Los Angeles, CA 90064",
+    "Site": "https://theapplepan.com/",
+    "Notes": null,
+    "lat": 34.0407099,
+    "lng": -118.4278297
+  },
+  {
+    "Name": "Musso & Frank Grill",
+    "Addresses": "6667 Hollywood Blvd, Hollywood, CA 90028",
+    "Site": "https://mussoandfrank.com/",
+    "Notes": "Recommended by John Madigan.",
+    "lat": 34.1017556,
+    "lng": -118.3352976
+  },
+  {
+    "Name": "Big Dean's Ocean Front Cafe",
+    "Addresses": "1615 Ocean Front Walk, Santa Monica, CA 90401",
+    "Site": "https://bigdeansoceanfrontcafe.com/",
+    "Notes": null,
+    "lat": 34.0102984,
+    "lng": -118.4955622
   }
 ]
