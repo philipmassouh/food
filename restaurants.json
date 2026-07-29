@@ -1363,5 +1363,27 @@
     "Comments": "My food was great. I would come here regularly, probably takeout but don't mind. People say you go to a mom and pop place for authentic Chinese food, but I'd say the most authentic Chinese culinary experience is Dan Modern Chinese -- it's like eating in a hospital.",
     "lat": 33.8982154,
     "lng": -118.395918
+  },
+  {
+    "Name": "Utamaro Sushi Izakaya",
+    "Tags": [
+      "Sushi",
+      "Izakaya"
+    ],
+    "Patio": false,
+    "Noise": 1,
+    "Chaos": 1,
+    "Atmosphere": 3,
+    "Service": 2,
+    "Food": 3,
+    "Price": 5,
+    "Value": 2,
+    "Site": "https://order.toasttab.com/online/utamaro",
+    "Instagram": "https://www.instagram.com/utamaro.la/",
+    "Yelp": "https://www.yelp.com/biz/utamaro-sushi-izakaya-los-angeles",
+    "Addresses": "2535 S Barrington Ave, Los Angeles, CA 90064",
+    "Comments": "The food was good but not better than Sugarfish. The waitress was new so not fair to evaluate the service (it was bad this time). I would go back and avoid the fixed menu and order stuff that looks good; bring a jacket, it's freezing.",
+    "lat": 34.0280062,
+    "lng": -118.4429742
   }
 ]
